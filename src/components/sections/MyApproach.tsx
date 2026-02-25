@@ -32,7 +32,7 @@ export default function MyApproach() {
     }, []);
 
     return (
-        <section ref={cRef} className="py-32 px-4 md:px-12 lg:px-24 w-full max-w-7xl mx-auto border-t border-border">
+        <section ref={cRef} className="py-16 md:py-32 px-4 md:px-12 lg:px-24 w-full max-w-7xl mx-auto border-t border-border">
             <div className="mb-20">
                 <MagneticWrapper strength={15}>
                     <h2 className="text-4xl md:text-6xl font-heading font-bold mb-4 inline-block">

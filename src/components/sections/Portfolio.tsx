@@ -73,7 +73,7 @@ export default function Portfolio() {
     );
 
     return (
-        <section className="py-32 px-4 md:px-12 lg:px-24 w-full max-w-7xl mx-auto">
+        <section className="py-16 md:py-32 px-4 md:px-12 lg:px-24 w-full max-w-7xl mx-auto">
 
             <div className="mb-16 md:mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8">
                 <div>

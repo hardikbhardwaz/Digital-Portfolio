@@ -40,7 +40,7 @@ export default function Blog() {
     }, []);
 
     return (
-        <section ref={cRef} className="py-32 px-4 md:px-12 lg:px-24 w-full max-w-7xl mx-auto border-t border-border mt-16">
+        <section ref={cRef} className="py-16 md:py-32 px-4 md:px-12 lg:px-24 w-full max-w-7xl mx-auto border-t border-border mt-16">
 
             <div className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-8">
                 <div>

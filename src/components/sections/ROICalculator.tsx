@@ -36,7 +36,7 @@ export default function ROICalculator() {
     }, []);
 
     return (
-        <section ref={containerRef} className="py-32 px-4 md:px-12 lg:px-24 max-w-7xl mx-auto">
+        <section ref={containerRef} className="py-16 md:py-32 px-4 md:px-12 lg:px-24 max-w-7xl mx-auto">
             <div className="mb-16">
                 <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4">
                     Forecast Your <span className="text-luxury-blue">Growth</span>

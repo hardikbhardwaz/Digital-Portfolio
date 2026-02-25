@@ -66,7 +66,7 @@ export default function Services() {
     }, []);
 
     return (
-        <section ref={containerRef} className="py-32 px-4 md:px-12 lg:px-24 w-full max-w-7xl mx-auto">
+        <section ref={containerRef} className="py-16 md:py-32 px-4 md:px-12 lg:px-24 w-full max-w-7xl mx-auto">
 
             <div className="mb-20 grid md:grid-cols-2 gap-12 items-end">
                 <div>

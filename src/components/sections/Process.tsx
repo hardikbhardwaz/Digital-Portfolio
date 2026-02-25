@@ -31,7 +31,7 @@ export default function Process() {
     }, []);
 
     return (
-        <section ref={cRef} className="py-32 px-4 md:px-12 lg:px-24 w-full max-w-7xl mx-auto">
+        <section ref={cRef} className="py-16 md:py-32 px-4 md:px-12 lg:px-24 w-full max-w-7xl mx-auto">
             <div className="mb-20">
                 <h2 className="text-4xl md:text-6xl font-heading font-bold mb-4">Growth <span className="text-luxury-violet">Methodology</span></h2>
                 <p className="text-foreground/70 text-lg font-light max-w-xl">A battle-tested, four-phase execution framework designed specifically to scale high-ticket offerings.</p>

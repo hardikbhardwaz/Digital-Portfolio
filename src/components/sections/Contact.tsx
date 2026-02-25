@@ -29,7 +29,7 @@ export default function Contact() {
     }, []);
 
     return (
-        <section ref={cRef} className="py-32 px-4 md:px-12 lg:px-24 max-w-7xl mx-auto min-h-screen flex flex-col justify-center">
+        <section ref={cRef} className="py-16 md:py-32 px-4 md:px-12 lg:px-24 max-w-7xl mx-auto min-h-screen flex flex-col justify-center">
 
             <div className="text-center mb-16 contact-fade">
                 <h2 className="text-5xl md:text-7xl font-heading font-bold mb-6">

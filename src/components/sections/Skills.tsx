@@ -63,7 +63,7 @@ export default function Skills() {
     }, []);
 
     return (
-        <section ref={cRef} className="py-32 px-4 md:px-12 lg:px-24 w-full max-w-7xl mx-auto" style={{ perspective: '1000px' }}>
+        <section ref={cRef} className="py-16 md:py-32 px-4 md:px-12 lg:px-24 w-full max-w-7xl mx-auto" style={{ perspective: '1000px' }}>
 
             <div className="mb-20 grid md:grid-cols-2 gap-12 items-end">
                 <div>

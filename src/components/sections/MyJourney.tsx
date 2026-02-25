@@ -32,7 +32,7 @@ export default function MyJourney() {
     }, []);
 
     return (
-        <section ref={containerRef} className="py-40 px-4 md:px-12 lg:px-24 w-full max-w-7xl mx-auto relative overflow-hidden">
+        <section ref={containerRef} className="py-20 md:py-40 px-4 md:px-12 lg:px-24 w-full max-w-7xl mx-auto relative overflow-hidden">
 
             {/* Subtle Cultural Motif / Mandala */}
             <svg

@@ -35,7 +35,7 @@ export default function WorkVault() {
     };
 
     return (
-        <section className="py-40 px-4 md:px-12 lg:px-24 w-full flex justify-center items-center relative z-20">
+        <section className="py-20 md:py-40 px-4 md:px-12 lg:px-24 w-full flex justify-center items-center relative z-20">
 
             {/* Interactive Trigger Button */}
             <MagneticWrapper strength={40}>

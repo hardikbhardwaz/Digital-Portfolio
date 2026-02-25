@@ -38,7 +38,7 @@ export default function Hero() {
             <h1 className="sr-only">Digital Marketing, Creative & Web Expert from India Driving Global Growth.</h1>
 
             {/* Asymmetrical Layout */}
-            <div className="w-full flex flex-col md:flex-row items-center justify-between gap-12 relative">
+            <div className="w-full flex flex-col-reverse md:flex-row items-center justify-between gap-12 relative pt-8 md:pt-0">
 
                 {/* Calm left side (Text) */}
                 <div className="w-full md:w-[60%] lg:w-[65%] flex flex-col justify-center relative">
@@ -112,7 +112,7 @@ export default function Hero() {
                 </div>
 
                 {/* Creative Right Side (Image Identity) */}
-                <div className="hero-element hidden md:flex w-full md:w-[40%] lg:w-[35%] justify-center items-center relative z-10" style={{ perspective: '1200px' }}>
+                <div className="hero-element flex w-full md:w-[40%] lg:w-[35%] justify-center items-center relative z-10" style={{ perspective: '1200px' }}>
 
                     <MagneticWrapper strength={15}>
                         <div className="relative w-72 lg:w-96 aspect-[3/4] rounded-[2rem] overflow-visible group transform-gpu hover:rotate-y-[-5deg] hover:rotate-x-[5deg] transition-all duration-700">

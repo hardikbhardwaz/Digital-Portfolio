@@ -32,7 +32,7 @@ export default function About() {
     }, []);
 
     return (
-        <section ref={sectionRef} className="min-h-screen w-full flex items-center justify-center py-32 px-4 md:px-12 lg:px-24">
+        <section ref={sectionRef} className="min-h-screen w-full flex items-center justify-center py-16 md:py-32 px-4 md:px-12 lg:px-24">
             <div className="max-w-6xl w-full grid md:grid-cols-2 gap-16 md:gap-24 items-center">
 
                 <div>

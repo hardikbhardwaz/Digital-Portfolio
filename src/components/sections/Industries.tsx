@@ -32,7 +32,7 @@ export default function Industries() {
     }, []);
 
     return (
-        <section ref={cRef} className="py-32 px-4 md:px-12 lg:px-24 w-full max-w-7xl mx-auto border-t border-border">
+        <section ref={cRef} className="py-16 md:py-32 px-4 md:px-12 lg:px-24 w-full max-w-7xl mx-auto border-t border-border">
             <div className="text-center mb-16">
                 <h2 className="text-3xl md:text-5xl font-heading font-bold mb-4">Industries We <span className="text-luxury-blue">Dominate</span></h2>
                 <p className="text-foreground/70 font-light max-w-2xl mx-auto">Providing specialized, high-conversion frameworks tailored precisely to the complexities of these key global sectors.</p>

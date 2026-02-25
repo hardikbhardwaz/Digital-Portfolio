@@ -46,7 +46,7 @@ export default function Testimonials() {
     }, []);
 
     return (
-        <section ref={cRef} className="py-32 px-4 md:px-12 lg:px-24 w-full max-w-7xl mx-auto">
+        <section ref={cRef} className="py-16 md:py-32 px-4 md:px-12 lg:px-24 w-full max-w-7xl mx-auto">
             <div className="text-center mb-16">
                 <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4">Client <span className="text-luxury-violet">Validation</span></h2>
                 <p className="text-foreground/70 font-light max-w-2xl mx-auto">Don't take our word for it. Look at the numbers our partners generate.</p>
