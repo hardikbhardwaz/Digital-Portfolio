@@ -24,7 +24,7 @@ const SERVICES = [
         icon: <Search className="w-6 h-6 text-luxury-blue" />
     },
     {
-        title: 'Branding & Creative Design',
+        title: 'Graphic Design',
         description: 'High-fidelity visual identity systems that position your brand as a premium authority.',
         icon: <PenTool className="w-6 h-6 text-luxury-violet" />
     },

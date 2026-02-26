@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, ArrowRight, PlayCircle } from 'lucide-react';
 import MagneticWrapper from '../MagneticWrapper';
 
-type Category = 'All' | 'Marketing' | 'Branding' | 'Video' | 'Web';
+type Category = 'All' | 'Marketing' | 'Graphics' | 'Video' | 'Web';
 
 interface Project {
     id: number;
@@ -29,7 +29,7 @@ const PROJECTS: Project[] = [
     {
         id: 2,
         title: 'Global SaaS Rebrand',
-        category: 'Branding',
+        category: 'Graphics',
         image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&q=80',
         videoUrl: 'https://cdn.pixabay.com/vimeo/328243006/abstract-22709.mp4?width=1280&hash=85e82f50af8c79294e02de8b704c718a38a7d32c',
         metrics: [{ label: 'Brand Lift', value: '64%' }, { label: 'Market Share', value: '+12%' }],
@@ -62,7 +62,7 @@ const PROJECTS: Project[] = [
     }
 ];
 
-const CATEGORIES: Category[] = ['All', 'Marketing', 'Branding', 'Video', 'Web'];
+const CATEGORIES: Category[] = ['All', 'Marketing', 'Graphics', 'Video', 'Web'];
 
 export default function Portfolio() {
     const [activeFilter, setActiveFilter] = useState<Category>('All');
@@ -94,8 +94,8 @@ export default function Portfolio() {
                             <button
                                 onClick={() => setActiveFilter(cat)}
                                 className={`px-6 py-3 rounded-full text-sm font-semibold transition-all ${activeFilter === cat
-                                        ? 'bg-foreground text-background shadow-lg scale-105'
-                                        : 'bg-foreground/5 text-foreground/70 hover:bg-foreground/10 hover:text-foreground'
+                                    ? 'bg-foreground text-background shadow-lg scale-105'
+                                    : 'bg-foreground/5 text-foreground/70 hover:bg-foreground/10 hover:text-foreground'
                                     }`}
                             >
                                 {cat}

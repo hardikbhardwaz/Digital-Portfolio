@@ -5,21 +5,21 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, Folder, FileVideo, FileCode2, LineChart, FileText, ArrowRight, ChevronRight, Cloud } from 'lucide-react';
 import MagneticWrapper from '../MagneticWrapper';
 
-type CategoryType = 'All' | 'Digital Marketing' | 'Funnels' | 'Branding' | 'Video' | 'Automation' | 'Websites';
+type CategoryType = 'All' | 'Digital Marketing' | 'Funnels' | 'Graphics' | 'Video' | 'Automation' | 'Websites';
 
 const DRIVE_FILES = [
     { id: 'f7', name: 'rse_industrial_webapp.js', type: 'Websites', cat: 'Websites', size: '22 MB', thumb: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80', description: 'Developed a comprehensive Progressive Web App for industrial manufacturers featuring rapid load times and WhatsApp inquiry routing.', link: 'https://www.rsesolution.com' },
     { id: 'f8', name: 'valvetype_speed_opt.html', type: 'Websites', cat: 'Websites', size: '14 MB', thumb: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80', description: 'Optimized high-performance landing page for speed and content delivery, extracting static resources for maximum load efficiency.', link: 'https://www.valvetype.rsesolution.com' },
     { id: 'f9', name: 'ClickNBliss_Portfolio.zip', type: 'Websites', cat: 'Websites', size: '202 MB', thumb: 'https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&q=80', description: 'Architected a dynamic, responsive creative portfolio website to showcase high-fidelity media, photography, and videography.', link: 'https://www.clicknbliss.com' },
     { id: 'f1', name: 'SaaS_Growth_Q3.mp4', type: 'Video', cat: 'Digital Marketing', size: '142 MB', thumb: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80', description: 'Engineered a multi-channel performance strategy targeting high-net-worth individuals, dropping acquisition costs massively.' },
-    { id: 'f2', name: 'Global_Rebrand_Guidelines.pdf', type: 'Branding', cat: 'Branding', size: '48 MB', thumb: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&q=80', description: 'A complete visual overhaul for a B2B SaaS platform positioning them as the premium leader in their vertical.' },
+    { id: 'f2', name: 'Global_Rebrand_Guidelines.pdf', type: 'Graphics', cat: 'Graphics', size: '48 MB', thumb: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&q=80', description: 'A complete visual overhaul for a B2B SaaS platform positioning them as the premium leader in their vertical.' },
     { id: 'f3', name: 'Auto_Cinematic_Final.mov', type: 'Video', cat: 'Video', size: '1.2 GB', thumb: 'https://images.unsplash.com/photo-1611095973763-414019e72400?auto=format&fit=crop&q=80', description: 'High-fidelity motion tracking and cinematic storytelling blending raw live-action footage with immersive CGI environments.' },
     { id: 'f4', name: 'Headless_Nextjs_Shopify.zip', type: 'Websites', cat: 'Websites', size: '12 MB', thumb: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80', description: 'Architected a headless Next.js & Shopify integration handling tens of thousands of dynamic SKUs with zero latency.' },
     { id: 'f5', name: 'WhatsApp_Lead_Funnel_Logic.js', type: 'Automation', cat: 'Funnels', size: '4 KB', thumb: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80', description: 'Deeply automated WhatsApp Chatbot funnel filtering unqualified leads and closing high-ticket sales automatically.' },
     { id: 'f6', name: 'CRO_A_B_Test_Results.xlsx', type: 'Digital Marketing', cat: 'Digital Marketing', size: '2 MB', thumb: 'https://images.unsplash.com/photo-1504868584819-f8e8b4bcafe2?auto=format&fit=crop&q=80', description: 'Extensive multivariate testing data leading to a 45% uplift in base conversion rate for an international e-commerce brand.' },
 ];
 
-const CATEGORIES: CategoryType[] = ['All', 'Digital Marketing', 'Funnels', 'Branding', 'Video', 'Automation', 'Websites'];
+const CATEGORIES: CategoryType[] = ['All', 'Digital Marketing', 'Funnels', 'Graphics', 'Video', 'Automation', 'Websites'];
 
 export default function WorkVault() {
     const [isOpen, setIsOpen] = useState(false);

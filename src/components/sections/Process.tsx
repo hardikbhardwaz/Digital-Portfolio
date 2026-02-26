@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const STEPS = [
     { step: '01', title: 'Data Audit & Strategy', desc: 'We analyze current bottlenecks, target CAP, and define a scalable revenue architecture.' },
-    { step: '02', title: 'Creative Engineering', desc: 'Our team crafts high-fidelity branding, elite ad creatives, and frictionless UI/UX flows.' },
+    { step: '02', title: 'Graphic & Creative Engineering', desc: 'Our team crafts high-fidelity graphics, elite ad creatives, and frictionless UI/UX flows.' },
     { step: '03', title: 'Technical Deployment', desc: 'We launch Next.js platforms, Shopify architectures, and automated WhatsApp/CRM funnels.' },
     { step: '04', title: 'Scale & Optimize', desc: 'Continuous multivariate testing, algorithmic media buying, and LTV maximization.' }
 ];

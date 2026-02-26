@@ -17,9 +17,9 @@ const SKILLS_DATA = [
     },
     {
         id: 'creative',
-        title: 'Creative Design',
+        title: 'Graphic Design',
         icon: <PenTool size={24} className="text-luxury-violet group-hover:scale-110 transition-transform" />,
-        skills: ['Premium Branding', 'Motion Graphics', 'UI/UX Prototypes', 'AI-Generated Art']
+        skills: ['Graphic Design', 'Motion Graphics', 'UI/UX Prototypes', 'AI-Generated Art']
     },
     {
         id: 'video',
