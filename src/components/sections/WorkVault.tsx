@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Folder, FileVideo, FileCode2, LineChart, FileText, ArrowRight, ChevronRight } from 'lucide-react';
+import { X, Folder, FileVideo, FileCode2, LineChart, FileText, ArrowRight, ChevronRight, Cloud } from 'lucide-react';
 import MagneticWrapper from '../MagneticWrapper';
 
 type CategoryType = 'All' | 'Digital Marketing' | 'Funnels' | 'Branding' | 'Video' | 'Automation' | 'Websites';
@@ -71,36 +71,50 @@ export default function WorkVault() {
                         exit={{ opacity: 0, scale: 0.95 }}
                         transition={{ duration: 0.7, ease: [0.32, 0.72, 0, 1] }}
                         className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-3xl overflow-y-auto"
+                        data-lenis-prevent="true"
                     >
-                        <div className="min-h-screen w-full p-4 md:p-12 lg:p-24 max-w-[1600px] mx-auto flex flex-col">
+                        {/* Fixed Close Button - Absolute to Viewport so it never overlaps content */}
+                        <button onClick={() => setIsOpen(false)} className="fixed top-4 right-4 md:top-12 md:right-12 p-3 bg-white/10 backdrop-blur-md rounded-full border border-white/20 hover:bg-white hover:text-black transition-colors z-[200] shadow-2xl">
+                            <X className="w-6 h-6" />
+                        </button>
+
+                        <div className="min-h-screen w-full p-4 pt-20 md:p-12 md:pt-12 lg:p-24 max-w-[1600px] mx-auto flex flex-col">
 
                             {/* Modal Header */}
-                            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-16 border-b border-white/10 pb-8 relative">
-                                <button onClick={() => setIsOpen(false)} className="absolute top-0 right-0 p-3 bg-white/5 rounded-full border border-white/10 hover:bg-white hover:text-black transition-colors z-20">
-                                    <X className="w-6 h-6" />
-                                </button>
+                            <div className="flex flex-col xl:flex-row justify-between items-start xl:items-end gap-8 mb-16 border-b border-white/10 pb-8 relative">
 
-                                <div>
-                                    <div className="flex items-center gap-3 text-white/50 text-sm font-semibold tracking-widest uppercase mb-4">
-                                        <Folder className="w-4 h-4" /> <span>My Drive</span> <ChevronRight className="w-3 h-3" /> <span className="text-white">Hardik_Public_Vault_2026</span>
+                                <div className="max-w-2xl pr-12">
+                                    <div className="flex flex-wrap items-center gap-2 md:gap-3 text-white/50 text-xs md:text-sm font-semibold tracking-widest uppercase mb-4">
+                                        <Folder className="w-4 h-4 shrink-0" /> <span>My Drive</span> <ChevronRight className="w-3 h-3 shrink-0" /> <span className="text-white">Hardik_Public_Vault</span>
                                     </div>
                                     <h2 className="text-4xl md:text-6xl font-heading font-bold text-white tracking-tight">The Digital Archive</h2>
+                                    <p className="mt-4 text-white/60 text-sm md:text-base font-light">My highest converting frameworks, unreleased case studies, and code logic hosted securely on Drive.</p>
                                 </div>
 
-                                {/* Filters */}
-                                <div className="flex flex-wrap gap-2 mt-4 md:mt-0 max-w-2xl justify-end">
-                                    {CATEGORIES.map(cat => (
-                                        <button
-                                            key={cat}
-                                            onClick={() => setActiveFilter(cat)}
-                                            className={`px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-all ${activeFilter === cat
-                                                ? 'bg-luxury-blue text-white shadow-[0_0_20px_rgba(0,85,255,0.4)]'
-                                                : 'bg-white/5 text-white/50 border border-white/5 hover:bg-white/10 hover:text-white'
-                                                }`}
-                                        >
-                                            {cat}
-                                        </button>
-                                    ))}
+                                {/* Filters & Actions Row */}
+                                <div className="flex flex-col items-start xl:items-end gap-5 w-full xl:w-auto">
+
+                                    {/* Google Drive Primary Button */}
+                                    <a href="#" className="flex items-center gap-3 px-6 py-3 bg-white text-black rounded-xl font-bold text-sm hover:scale-105 hover:bg-gray-200 transition-all shadow-[0_0_30px_rgba(255,255,255,0.2)]">
+                                        <Cloud className="w-5 h-5 text-blue-600" />
+                                        Access Full Google Drive
+                                    </a>
+
+                                    {/* Filter Group */}
+                                    <div className="flex flex-wrap gap-2 justify-start xl:justify-end">
+                                        {CATEGORIES.map(cat => (
+                                            <button
+                                                key={cat}
+                                                onClick={() => setActiveFilter(cat)}
+                                                className={`px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-all ${activeFilter === cat
+                                                    ? 'bg-luxury-blue text-white shadow-[0_0_20px_rgba(0,85,255,0.4)]'
+                                                    : 'bg-white/5 text-white/50 border border-white/5 hover:bg-white/10 hover:text-white'
+                                                    }`}
+                                            >
+                                                {cat}
+                                            </button>
+                                        ))}
+                                    </div>
                                 </div>
                             </div>
 
