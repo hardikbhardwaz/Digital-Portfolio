@@ -71,7 +71,7 @@ export default function Contact() {
                         </div>
                         <div>
                             <h4 className="text-xs text-foreground/50 uppercase tracking-widest font-semibold mb-1">Location</h4>
-                            <p className="font-heading font-bold text-lg">Rajasthan, India</p>
+                            <p className="font-heading font-bold text-lg">Working Remotely</p>
                             <p className="text-xs text-foreground/50">Operating Globally 🌎</p>
                         </div>
                     </div>

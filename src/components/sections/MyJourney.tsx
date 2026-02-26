@@ -59,7 +59,7 @@ export default function MyJourney() {
                     />
                     <div className="absolute bottom-6 left-6 right-6 p-6 glass rounded-xl border border-white/10 backdrop-blur-md z-20 overflow-hidden">
                         <div className="absolute top-0 left-0 w-1 bg-luxury-blue h-full"></div>
-                        <p className="font-heading font-bold text-lg mb-1">Operating out of Rajasthan, India.</p>
+                        <p className="font-heading font-bold text-lg mb-1">Working remotely.</p>
                         <p className="text-sm text-foreground/70 font-light">Scaling brands globally with relentless execution.</p>
                     </div>
                 </div>
