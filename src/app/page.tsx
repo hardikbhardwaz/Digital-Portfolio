@@ -32,7 +32,7 @@ export default function Home() {
 
         {/* Simple Footer */}
         <footer className="border-t border-border mt-20 py-8 text-center text-foreground/50 text-sm">
-          <p>© {new Date().getFullYear()} Digital Growth Partner. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Created by Hardik. All rights reserved.</p>
         </footer>
       </div>
     </main>
