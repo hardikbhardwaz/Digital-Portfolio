@@ -8,12 +8,14 @@ import Skills from '@/components/sections/Skills';
 import Contact from '@/components/sections/Contact';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import FloatingWhatsApp from '@/components/FloatingWhatsApp';
+import FloatingBrochure from '@/components/FloatingBrochure';
 
 export default function Home() {
   return (
     <main className="relative min-h-screen bg-transparent w-full">
       <ThemeToggle />
       <FloatingWhatsApp />
+      <FloatingBrochure />
       <div className="fixed inset-0 z-[-1] bg-background">
         <CanvasWrapper />
       </div>
