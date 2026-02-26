@@ -171,21 +171,64 @@ export default function WorkVault() {
                                                 <X className="w-5 h-5" />
                                             </button>
 
-                                            <div className="w-full md:w-1/2 h-64 md:h-auto overflow-hidden">
-                                                <img src={selectedFile.thumb} className="w-full h-full object-cover" />
+                                            {/* Left Column: Image with Extraordinary Scanning Effects */}
+                                            <div className="w-full md:w-[45%] h-64 md:h-auto overflow-hidden relative group bg-black">
+                                                <img src={selectedFile.thumb} className="w-full h-full object-cover grayscale mix-blend-luminosity opacity-40 group-hover:grayscale-0 group-hover:opacity-100 group-hover:mix-blend-normal transition-all duration-1000 scale-105 group-hover:scale-100" />
+
+                                                {/* Holographic Glowing Overlay */}
+                                                <div className="absolute inset-0 bg-gradient-to-tr from-luxury-blue/40 to-luxury-violet/40 mix-blend-color opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none"></div>
+
+                                                {/* Cyberpunk Animated Scanning Laser */}
+                                                <motion.div
+                                                    initial={{ y: '-100%' }}
+                                                    animate={{ y: '1000%' }}
+                                                    transition={{ repeat: Infinity, duration: 4, ease: 'linear' }}
+                                                    className="absolute top-0 left-0 w-full h-[2px] bg-cyan-400 shadow-[0_0_15px_#00ffff] pointer-events-none opacity-50"
+                                                />
+
+                                                {/* Tech HUD Data */}
+                                                <div className="absolute bottom-4 left-4 flex flex-col gap-1 pointer-events-none">
+                                                    <span className="text-[10px] text-white/50 font-mono tracking-widest uppercase">Encryption // <span className="text-green-400">Bypassed</span></span>
+                                                    <span className="text-[10px] text-cyan-400 font-mono tracking-widest uppercase animate-pulse">Data Stream // Active</span>
+                                                </div>
                                             </div>
 
-                                            <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
-                                                <div className="flex items-center gap-3 mb-6">
-                                                    {getIcon(selectedFile.type)}
-                                                    <span className="text-white/50 text-sm font-mono">{selectedFile.name}</span>
-                                                </div>
-                                                <h3 className="text-3xl font-heading font-bold text-white mb-4">Strategic Execution</h3>
-                                                <p className="text-white/70 font-light leading-relaxed mb-8">{selectedFile.description}</p>
+                                            {/* Right Column: Premium Information & CTAs */}
+                                            <div className="w-full md:w-[55%] p-8 md:p-12 flex flex-col justify-center bg-black/50 backdrop-blur-3xl relative">
 
-                                                <button className="w-full py-4 text-center bg-white text-black rounded-xl font-bold hover:bg-gray-200 transition-colors">
-                                                    View Full Case Study
-                                                </button>
+                                                {/* Subtle ambient lighting */}
+                                                <div className="absolute -top-32 -right-32 w-64 h-64 bg-luxury-blue/20 blur-[100px] rounded-full pointer-events-none"></div>
+
+                                                <div className="flex items-center gap-3 mb-6 relative z-10">
+                                                    {getIcon(selectedFile.type)}
+                                                    <span className="text-white/50 text-sm font-mono tracking-widest uppercase">{selectedFile.name}</span>
+                                                </div>
+                                                <h3 className="text-3xl font-heading font-bold text-white mb-4 relative z-10 tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">{selectedFile.cat} Module</h3>
+                                                <p className="text-white/70 font-light leading-relaxed mb-10 relative z-10 min-h-[80px]">{selectedFile.description}</p>
+
+                                                {/* Extraordinary Action Buttons */}
+                                                <div className="flex flex-col gap-4 mt-auto relative z-10">
+
+                                                    {/* Primary CTA: Google Drive Link (Extraordinary, Glowing) */}
+                                                    <MagneticWrapper strength={15}>
+                                                        <a href="#" className="group relative w-full flex items-center justify-center gap-3 py-4 rounded-xl bg-black border border-white/20 overflow-hidden hover:border-luxury-blue/80 transition-all duration-700 hover:shadow-[0_0_40px_rgba(0,85,255,0.4)] block text-center">
+                                                            {/* Sweep Gradient */}
+                                                            <div className="absolute inset-0 bg-gradient-to-r from-luxury-blue/0 via-luxury-blue/20 to-luxury-blue/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-in-out"></div>
+                                                            <Cloud className="w-5 h-5 text-gray-400 group-hover:text-blue-500 group-hover:scale-110 transition-all duration-500" />
+                                                            <span className="text-white/80 group-hover:text-white font-bold tracking-widest uppercase text-sm transition-colors duration-500">Access Native Drive Asset</span>
+                                                            <ArrowRight className="w-4 h-4 text-white/30 group-hover:text-white group-hover:translate-x-1 group-hover:-rotate-45 transition-all duration-500" />
+                                                        </a>
+                                                    </MagneticWrapper>
+
+                                                    {/* Secondary CTA: Decrypt / View Raw Data (High-tech) */}
+                                                    <button className="group relative w-full flex items-center justify-center gap-3 py-4 rounded-xl bg-gradient-to-r from-luxury-blue to-luxury-violet text-white overflow-hidden transition-all duration-500 hover:scale-[1.02] shadow-[0_4px_20px_rgba(0,85,255,0.4)] hover:shadow-[0_0_50px_rgba(143,0,255,0.6)]">
+                                                        {/* Cyber Grid Texture Overlay */}
+                                                        <div className="absolute inset-0 opacity-20 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at center, white 1px, transparent 1px)', backgroundSize: '10px 10px' }}></div>
+                                                        <FileCode2 className="w-5 h-5 animate-pulse relative z-10" />
+                                                        <span className="font-bold tracking-widest uppercase text-sm relative z-10">Decrypt & Execute Raw Logic</span>
+                                                    </button>
+
+                                                </div>
                                             </div>
                                         </div>
                                     </motion.div>
