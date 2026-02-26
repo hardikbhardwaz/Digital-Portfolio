@@ -5,6 +5,7 @@ import { clsx } from 'clsx';
 import { ThemeProvider } from '@/components/theme-provider';
 import SmoothScrolling from '@/components/SmoothScrolling';
 import Cursor from '@/components/Cursor';
+import Preloader from '@/components/Preloader';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -36,6 +37,7 @@ export default function RootLayout({
         spaceGrotesk.variable,
         'antialiased bg-background text-foreground min-h-screen selection:bg-luxury-blue selection:text-white font-sans overflow-x-hidden'
       )}>
+        <Preloader />
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
