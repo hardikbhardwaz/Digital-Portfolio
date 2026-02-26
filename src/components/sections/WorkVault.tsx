@@ -164,9 +164,10 @@ export default function WorkVault() {
                                         initial={{ opacity: 0 }}
                                         animate={{ opacity: 1 }}
                                         exit={{ opacity: 0 }}
-                                        className="fixed inset-0 z-[200] flex items-center justify-center p-4 bg-black/90 backdrop-blur-md"
+                                        className="fixed inset-0 z-[200] flex items-start justify-center p-4 md:p-12 bg-black/90 backdrop-blur-md overflow-y-auto"
+                                        data-lenis-prevent="true"
                                     >
-                                        <div className="w-full max-w-4xl bg-[#111] border border-white/10 rounded-2xl overflow-hidden relative shadow-2xl flex flex-col md:flex-row">
+                                        <div className="w-full max-w-4xl bg-[#111] border border-white/10 rounded-2xl overflow-hidden relative shadow-2xl flex flex-col md:flex-row my-auto">
                                             <button onClick={(e) => { e.stopPropagation(); setSelectedFile(null); }} className="absolute top-4 right-4 z-10 p-2 bg-black/50 hover:bg-black rounded-full text-white">
                                                 <X className="w-5 h-5" />
                                             </button>
