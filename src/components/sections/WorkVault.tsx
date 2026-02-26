@@ -73,8 +73,8 @@ export default function WorkVault() {
                         className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-3xl overflow-y-auto"
                         data-lenis-prevent="true"
                     >
-                        {/* Fixed Close Button - Absolute to Viewport so it never overlaps content */}
-                        <button onClick={() => setIsOpen(false)} className="fixed top-4 right-4 md:top-12 md:right-12 p-3 bg-white/10 backdrop-blur-md rounded-full border border-white/20 hover:bg-white hover:text-black transition-colors z-[200] shadow-2xl">
+                        {/* Fixed Close Button - Moved right-20 on mobile to avoid ThemeToggle overlap */}
+                        <button onClick={() => setIsOpen(false)} className="fixed top-4 right-20 md:top-12 md:right-12 p-3 bg-white/10 backdrop-blur-md rounded-full border border-white/20 hover:bg-white hover:text-black transition-colors z-[200] shadow-2xl">
                             <X className="w-6 h-6" />
                         </button>
 
@@ -174,7 +174,7 @@ export default function WorkVault() {
                     >
                         <div className="min-h-full flex items-center justify-center p-4 py-12 md:p-12">
                             <div className="w-full max-w-4xl bg-[#111] border border-white/10 rounded-2xl overflow-hidden relative shadow-2xl flex flex-col md:flex-row m-auto">
-                                <button onClick={(e) => { e.stopPropagation(); setSelectedFile(null); }} className="absolute top-4 right-4 z-10 p-2 bg-black/50 hover:bg-black rounded-full text-white">
+                                <button onClick={(e) => { e.stopPropagation(); setSelectedFile(null); }} className="absolute top-4 right-20 md:top-4 md:right-4 z-10 p-2 bg-black/50 hover:bg-black rounded-full text-white">
                                     <X className="w-5 h-5" />
                                 </button>
 
