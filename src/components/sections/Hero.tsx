@@ -84,13 +84,19 @@ export default function Hero() {
                             </MagneticWrapper>
 
                             <MagneticWrapper strength={20}>
-                                <button className="group flex items-center gap-2 px-8 py-4 rounded-xl bg-luxury-violet/10 border border-luxury-violet/30 text-white font-medium text-sm hover:bg-luxury-violet/20 hover:shadow-[0_0_20px_rgba(143,0,255,0.2)] transition-all">
+                                <button
+                                    onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                                    className="group flex items-center gap-2 px-8 py-4 rounded-xl bg-luxury-violet/10 border border-luxury-violet/30 text-white font-medium text-sm hover:bg-luxury-violet/20 hover:shadow-[0_0_20px_rgba(143,0,255,0.2)] transition-all"
+                                >
                                     Get Free Growth Audit
                                 </button>
                             </MagneticWrapper>
 
                             <MagneticWrapper strength={10}>
-                                <button className="group flex items-center gap-2 px-8 py-4 rounded-xl bg-transparent border border-white/5 text-white/70 font-medium text-sm hover:text-white hover:border-white/20 transition-colors">
+                                <button
+                                    onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                                    className="group flex items-center gap-2 px-8 py-4 rounded-xl bg-transparent border border-white/5 text-white/70 font-medium text-sm hover:text-white hover:border-white/20 transition-colors"
+                                >
                                     <Presentation className="w-4 h-4" /> Book Strategy Call
                                 </button>
                             </MagneticWrapper>
