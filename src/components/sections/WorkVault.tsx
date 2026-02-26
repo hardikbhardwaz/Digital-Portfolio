@@ -8,6 +8,9 @@ import MagneticWrapper from '../MagneticWrapper';
 type CategoryType = 'All' | 'Digital Marketing' | 'Funnels' | 'Branding' | 'Video' | 'Automation' | 'Websites';
 
 const DRIVE_FILES = [
+    { id: 'f7', name: 'rse_industrial_webapp.js', type: 'Websites', cat: 'Websites', size: '22 MB', thumb: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80', description: 'Developed a comprehensive Progressive Web App for industrial manufacturers featuring rapid load times and WhatsApp inquiry routing.', link: 'https://www.rsesolution.com' },
+    { id: 'f8', name: 'valvetype_speed_opt.html', type: 'Websites', cat: 'Websites', size: '14 MB', thumb: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80', description: 'Optimized high-performance landing page for speed and content delivery, extracting static resources for maximum load efficiency.', link: 'https://www.valvetype.rsesolution.com' },
+    { id: 'f9', name: 'ClickNBliss_Portfolio.zip', type: 'Websites', cat: 'Websites', size: '202 MB', thumb: 'https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&q=80', description: 'Architected a dynamic, responsive creative portfolio website to showcase high-fidelity media, photography, and videography.', link: 'https://www.clicknbliss.com' },
     { id: 'f1', name: 'SaaS_Growth_Q3.mp4', type: 'Video', cat: 'Digital Marketing', size: '142 MB', thumb: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80', description: 'Engineered a multi-channel performance strategy targeting high-net-worth individuals, dropping acquisition costs massively.' },
     { id: 'f2', name: 'Global_Rebrand_Guidelines.pdf', type: 'Branding', cat: 'Branding', size: '48 MB', thumb: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&q=80', description: 'A complete visual overhaul for a B2B SaaS platform positioning them as the premium leader in their vertical.' },
     { id: 'f3', name: 'Auto_Cinematic_Final.mov', type: 'Video', cat: 'Video', size: '1.2 GB', thumb: 'https://images.unsplash.com/photo-1611095973763-414019e72400?auto=format&fit=crop&q=80', description: 'High-fidelity motion tracking and cinematic storytelling blending raw live-action footage with immersive CGI environments.' },
@@ -228,12 +231,20 @@ export default function WorkVault() {
                                         </MagneticWrapper>
 
                                         {/* Secondary CTA: Decrypt / View Raw Data (High-tech) */}
-                                        <button className="group relative w-full flex items-center justify-center gap-3 py-4 rounded-xl bg-gradient-to-r from-luxury-blue to-luxury-violet text-white overflow-hidden transition-all duration-500 hover:scale-[1.02] shadow-[0_4px_20px_rgba(0,85,255,0.4)] hover:shadow-[0_0_50px_rgba(143,0,255,0.6)]">
-                                            {/* Cyber Grid Texture Overlay */}
-                                            <div className="absolute inset-0 opacity-20 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at center, white 1px, transparent 1px)', backgroundSize: '10px 10px' }}></div>
-                                            <FileCode2 className="w-5 h-5 animate-pulse relative z-10" />
-                                            <span className="font-bold tracking-widest uppercase text-sm relative z-10">Decrypt & Execute Raw Logic</span>
-                                        </button>
+                                        {selectedFile.link ? (
+                                            <a href={selectedFile.link} target="_blank" rel="noopener noreferrer" className="group relative w-full flex items-center justify-center gap-3 py-4 rounded-xl bg-gradient-to-r from-luxury-blue to-luxury-violet text-white overflow-hidden transition-all duration-500 hover:scale-[1.02] shadow-[0_4px_20px_rgba(0,85,255,0.4)] hover:shadow-[0_0_50px_rgba(143,0,255,0.6)]">
+                                                <div className="absolute inset-0 opacity-20 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at center, white 1px, transparent 1px)', backgroundSize: '10px 10px' }}></div>
+                                                <Cloud className="w-5 h-5 animate-pulse relative z-10" />
+                                                <span className="font-bold tracking-widest uppercase text-sm relative z-10">Launch Live Deployment</span>
+                                            </a>
+                                        ) : (
+                                            <button className="group relative w-full flex items-center justify-center gap-3 py-4 rounded-xl bg-gradient-to-r from-luxury-blue to-luxury-violet text-white overflow-hidden transition-all duration-500 hover:scale-[1.02] shadow-[0_4px_20px_rgba(0,85,255,0.4)] hover:shadow-[0_0_50px_rgba(143,0,255,0.6)]">
+                                                {/* Cyber Grid Texture Overlay */}
+                                                <div className="absolute inset-0 opacity-20 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at center, white 1px, transparent 1px)', backgroundSize: '10px 10px' }}></div>
+                                                <FileCode2 className="w-5 h-5 animate-pulse relative z-10" />
+                                                <span className="font-bold tracking-widest uppercase text-sm relative z-10">Decrypt & Execute Raw Logic</span>
+                                            </button>
+                                        )}
 
                                     </div>
                                 </div>
