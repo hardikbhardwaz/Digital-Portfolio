@@ -83,7 +83,7 @@ export default function Portfolio() {
                         </h2>
                     </MagneticWrapper>
                     <p className="text-foreground/70 text-lg max-w-xl font-light">
-                        An immersive look at the ecosystems I've engineered. Hover to reveal cinematic previews.
+                        An immersive look at the ecosystems I&apos;ve engineered. Hover to reveal cinematic previews.
                     </p>
                 </div>
 

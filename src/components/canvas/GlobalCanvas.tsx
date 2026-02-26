@@ -12,8 +12,10 @@ export default function GlobalCanvas() {
     const [dpr, setDpr] = useState(1);
 
     useEffect(() => {
-        // Safely get DPR to prevent hydration errors and cap at 2 for performance
-        setDpr(Math.min(window.devicePixelRatio, 2));
+        const timeout = setTimeout(() => {
+            setDpr(Math.min(window.devicePixelRatio, 2));
+        }, 0);
+        return () => clearTimeout(timeout);
     }, []);
 
     return (

@@ -11,7 +11,7 @@ export default function Cursor() {
     useEffect(() => {
         // Detect if device has touch capability
         if (window.matchMedia('(pointer: coarse)').matches) {
-            setIsTouch(true);
+            setTimeout(() => setIsTouch(true), 0);
             return;
         }
 

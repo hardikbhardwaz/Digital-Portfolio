@@ -38,7 +38,7 @@ export default function Industries() {
                 <p className="text-foreground/70 font-light max-w-2xl mx-auto">Providing specialized, high-conversion frameworks tailored precisely to the complexities of these key global sectors.</p>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
                 {INDUSTRIES.map((ind) => (
                     <div key={ind.id} className="industry-card bg-surface border border-border rounded-2xl p-8 hover:bg-foreground/5 transition-colors text-center group cursor-default">
                         <div className="group-hover:-translate-y-2 transition-transform duration-300">

@@ -35,7 +35,7 @@ const CATEGORIES: CategoryType[] = ['All', 'Digital Marketing', 'Funnels', 'Grap
 export default function WorkVault() {
     const [isOpen, setIsOpen] = useState(false);
     const [activeFilter, setActiveFilter] = useState<CategoryType>('All');
-    const [selectedFile, setSelectedFile] = useState<any | null>(null);
+    const [selectedFile, setSelectedFile] = useState<(typeof DRIVE_FILES)[0] | null>(null);
 
     const filteredFiles = DRIVE_FILES.filter(f => activeFilter === 'All' || f.cat === activeFilter);
 
@@ -194,7 +194,7 @@ export default function WorkVault() {
 
                                 {/* Left Column: Image with Extraordinary Scanning Effects */}
                                 <div className="w-full md:w-[45%] h-64 md:h-auto overflow-hidden relative group bg-black">
-                                    <img src={selectedFile.thumb} className="w-full h-full object-cover grayscale mix-blend-luminosity opacity-40 group-hover:grayscale-0 group-hover:opacity-100 group-hover:mix-blend-normal transition-all duration-1000 scale-105 group-hover:scale-100" />
+                                    <img src={selectedFile.thumb} alt={selectedFile.name} className="w-full h-full object-cover grayscale mix-blend-luminosity opacity-40 group-hover:grayscale-0 group-hover:opacity-100 group-hover:mix-blend-normal transition-all duration-1000 scale-105 group-hover:scale-100" />
 
                                     {/* Holographic Glowing Overlay */}
                                     <div className="absolute inset-0 bg-gradient-to-tr from-luxury-blue/40 to-luxury-violet/40 mix-blend-color opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none"></div>

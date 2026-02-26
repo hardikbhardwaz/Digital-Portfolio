@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
-import { ArrowRight, ChevronRight, Presentation } from 'lucide-react';
+import { ArrowRight, Presentation } from 'lucide-react';
 import MagneticWrapper from '../MagneticWrapper';
 
 export default function Hero() {
@@ -59,7 +59,7 @@ export default function Hero() {
                         </div>
 
                         {/* Sharp, Bold Headline - High Contrast */}
-                        <h2 className="text-4xl md:text-5xl lg:text-[5rem] font-bold font-heading mb-8 tracking-tighter leading-[1.1] text-white drop-shadow-[0_4px_10px_rgba(0,0,0,0.6)]">
+                        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[5rem] font-bold font-heading mb-8 tracking-tighter leading-[1.1] text-white drop-shadow-[0_4px_10px_rgba(0,0,0,0.6)]">
                             <div className="hero-line pb-2">I help brands scale</div>
                             <div className="hero-line pb-2">with <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-luxury-blue to-luxury-violet italic font-light drop-shadow-[0_0_30px_rgba(0,85,255,0.4)]">performance,</span></div>
                             <div className="hero-line pb-2">creativity, & high-impact</div>
@@ -77,7 +77,7 @@ export default function Hero() {
                             <MagneticWrapper strength={30}>
                                 <button
                                     onClick={() => document.getElementById('work-vault-trigger')?.click()}
-                                    className="group flex items-center gap-2 px-8 py-4 rounded-xl bg-luxury-blue text-white font-bold text-sm hover:scale-[1.03] transition-transform shadow-[0_0_40px_rgba(0,85,255,0.4)] border border-blue-400/30"
+                                    className="group flex items-center justify-center gap-2 px-8 py-4 w-full sm:w-auto rounded-xl bg-luxury-blue text-white font-bold text-sm hover:scale-[1.03] transition-transform shadow-[0_0_40px_rgba(0,85,255,0.4)] border border-blue-400/30"
                                 >
                                     View My Work <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 group-hover:-rotate-45 transition-transform" />
                                 </button>
@@ -86,7 +86,7 @@ export default function Hero() {
                             <MagneticWrapper strength={20}>
                                 <button
                                     onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                                    className="group flex items-center gap-2 px-8 py-4 rounded-xl bg-luxury-violet/10 border border-luxury-violet/30 text-white font-medium text-sm hover:bg-luxury-violet/20 hover:shadow-[0_0_20px_rgba(143,0,255,0.2)] transition-all"
+                                    className="group flex items-center justify-center gap-2 px-8 py-4 w-full sm:w-auto rounded-xl bg-luxury-violet/10 border border-luxury-violet/30 text-white font-medium text-sm hover:bg-luxury-violet/20 hover:shadow-[0_0_20px_rgba(143,0,255,0.2)] transition-all"
                                 >
                                     Get Free Growth Audit
                                 </button>
@@ -95,7 +95,7 @@ export default function Hero() {
                             <MagneticWrapper strength={10}>
                                 <button
                                     onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                                    className="group flex items-center gap-2 px-8 py-4 rounded-xl bg-transparent border border-white/5 text-white/70 font-medium text-sm hover:text-white hover:border-white/20 transition-colors"
+                                    className="group flex items-center justify-center gap-2 px-8 py-4 w-full sm:w-auto rounded-xl bg-transparent border border-white/5 text-white/70 font-medium text-sm hover:text-white hover:border-white/20 transition-colors"
                                 >
                                     <Presentation className="w-4 h-4" /> Book Strategy Call
                                 </button>

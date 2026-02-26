@@ -81,10 +81,10 @@ export default function MyJourney() {
                             I didn’t just learn digital marketing—I reverse-engineered it. I blend the extreme technical precision of web engineering with algorithmic media buying to create digital ecosystems that print revenue.
                         </p>
                         <p className="journey-text">
-                            As an individual expert, I don't hide behind a massive agency team. When you work with me, you are getting my direct strategic mind, my code, and my creative vision. I've scaled SaaS platforms, Enterprise B2B, and E-Commerce giants internationally without the corporate bloat.
+                            As an individual expert, I don&apos;t hide behind a massive agency team. When you work with me, you are getting my direct strategic mind, my code, and my creative vision. I&apos;ve scaled SaaS platforms, Enterprise B2B, and E-Commerce giants internationally without the corporate bloat.
                         </p>
                         <p className="journey-text italic text-foreground border-l-2 border-luxury-violet pl-6 mt-8">
-                            "The aesthetic of a global agency. The agility and obsession of an individual."
+                            &quot;The aesthetic of a global agency. The agility and obsession of an individual.&quot;
                         </p>
                     </div>
                 </div>

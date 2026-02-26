@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useMemo } from 'react';
+import { useRef, useMemo, useState } from 'react';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 
@@ -11,7 +11,7 @@ export default function CinematicDust() {
 
     const dummy = useMemo(() => new THREE.Object3D(), []);
 
-    const particles = useMemo(() => {
+    const [particles] = useState(() => {
         return Array.from({ length: COUNT }, () => ({
             position: [
                 (Math.random() - 0.5) * 30,
@@ -22,7 +22,7 @@ export default function CinematicDust() {
             speed: Math.random() * 0.1 + 0.02,
             scale: Math.random() * 0.03 + 0.01
         }));
-    }, []);
+    });
 
     useFrame((state) => {
         if (!meshRef.current) return;

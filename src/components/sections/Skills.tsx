@@ -75,7 +75,7 @@ export default function Skills() {
                 </div>
                 <div>
                     <p className="text-foreground/70 text-lg font-light leading-relaxed">
-                        I don't just specialize in one domain. I engineer complete growth ecosystems—from the very first ad creative to the final automated checkout flow.
+                        I don&apos;t just specialize in one domain. I engineer complete growth ecosystems—from the very first ad creative to the final automated checkout flow.
                     </p>
                 </div>
             </div>
@@ -113,7 +113,7 @@ export default function Skills() {
                     <div className="skill-card glass p-8 rounded-[2rem] border border-border h-full flex flex-col items-center justify-center text-center bg-foreground group relative overflow-hidden">
                         <div className="absolute inset-0 bg-gradient-to-tr from-luxury-blue to-luxury-violet opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                         <h3 className="text-2xl font-heading font-bold text-background relative z-10">Need an All-In-One Solution?</h3>
-                        <p className="text-background/80 mt-4 font-semibold relative z-10 border-b border-background/30 pb-1">Let's discuss your project</p>
+                        <p className="text-background/80 mt-4 font-semibold relative z-10 border-b border-background/30 pb-1">Let&apos;s discuss your project</p>
                     </div>
                 </MagneticWrapper>
             </div>

@@ -7,7 +7,7 @@ export default function FloatingWhatsApp() {
     const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
-        setMounted(true);
+        setTimeout(() => setMounted(true), 0);
     }, []);
 
     if (!mounted) return null;
@@ -27,7 +27,7 @@ export default function FloatingWhatsApp() {
 
             {/* Tooltip */}
             <div className="absolute right-full mr-4 bg-foreground text-background text-sm font-semibold py-2 px-4 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all whitespace-nowrap">
-                Let's Chat!
+                Let&apos;s Chat!
                 {/* Triangle pointer */}
                 <div className="absolute top-1/2 -right-1 w-2 h-2 bg-foreground transform -translate-y-1/2 rotate-45"></div>
             </div>

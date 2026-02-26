@@ -61,7 +61,7 @@ export default function WhatsAppBot() {
                             <div className="bg-white p-3 rounded-tr-xl rounded-bl-xl rounded-br-xl shadow-sm max-w-[85%] border border-[#dcf8c6]/50">
                                 <p className="text-[#111] text-sm">Perfect. Based on that volume, the eBook is attached below. 📄<br /><br />Would you like to book a quick 15-min mapping session to discuss scaling that $25k to $100k?</p>
                                 <div className="mt-2 flex flex-col gap-1">
-                                    <button className="bg-[#f0f0f0] text-[#075E54] font-bold text-xs py-2 rounded-lg border border-[#ddd]">Yes, let's chat</button>
+                                    <button className="bg-[#f0f0f0] text-[#075E54] font-bold text-xs py-2 rounded-lg border border-[#ddd]">Yes, let&apos;s chat</button>
                                     <button className="bg-[#f0f0f0] text-[#075E54] font-bold text-xs py-2 rounded-lg border border-[#ddd]">Just the eBook for now</button>
                                 </div>
                                 <p className="text-[#999] text-[10px] text-right mt-1">14:32</p>

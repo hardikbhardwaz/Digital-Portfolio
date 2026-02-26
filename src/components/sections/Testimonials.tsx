@@ -49,7 +49,7 @@ export default function Testimonials() {
         <section ref={cRef} className="py-16 md:py-32 px-4 md:px-12 lg:px-24 w-full max-w-7xl mx-auto">
             <div className="text-center mb-16">
                 <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4">Client <span className="text-luxury-violet">Validation</span></h2>
-                <p className="text-foreground/70 font-light max-w-2xl mx-auto">Don't take our word for it. Look at the numbers our partners generate.</p>
+                <p className="text-foreground/70 font-light max-w-2xl mx-auto">Don&apos;t take our word for it. Look at the numbers our partners generate.</p>
             </div>
 
             <div className="grid lg:grid-cols-3 gap-8">
@@ -57,7 +57,7 @@ export default function Testimonials() {
                     <div key={i} className="testimonial-card glass p-8 md:p-12 rounded-[2rem] border border-border relative flex flex-col">
                         <Quote className="absolute top-8 right-8 w-12 h-12 text-luxury-blue opacity-10" />
 
-                        <p className="text-foreground/80 font-light text-lg leading-relaxed mb-10 italic relative z-10">"{t.quote}"</p>
+                        <p className="text-foreground/80 font-light text-lg leading-relaxed mb-10 italic relative z-10">&quot;{t.quote}&quot;</p>
 
                         <div className="mt-auto flex items-center gap-4">
                             <img src={t.image} alt={t.name} className="w-14 h-14 rounded-full object-cover border border-border grayscale" />
