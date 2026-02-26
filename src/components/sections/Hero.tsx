@@ -51,9 +51,9 @@ export default function Hero() {
                         <div className="absolute -top-[100px] -left-[100px] w-[300px] h-[300px] bg-white opacity-5 blur-[120px] pointer-events-none rounded-full"></div>
 
                         {/* Strategic Eyebrow */}
-                        <div className="hero-element inline-flex items-center gap-3 mb-8">
-                            <span className="w-8 h-[1px] bg-white/40"></span>
-                            <span className="text-xs uppercase tracking-[0.3em] font-semibold text-white/50">
+                        <div className="hero-element inline-flex items-center gap-2 sm:gap-3 mb-6 sm:mb-8">
+                            <span className="w-6 sm:w-8 h-[1px] bg-white/40"></span>
+                            <span className="text-[10px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.3em] font-semibold text-white/70">
                                 Hardik Sharma
                             </span>
                         </div>
@@ -121,7 +121,7 @@ export default function Hero() {
                 <div className="hero-element flex w-full md:w-[40%] lg:w-[35%] justify-center items-center relative z-10" style={{ perspective: '1200px' }}>
 
                     <MagneticWrapper strength={15}>
-                        <div className="relative w-72 lg:w-96 aspect-[3/4] rounded-[2rem] overflow-visible group transform-gpu hover:rotate-y-[-5deg] hover:rotate-x-[5deg] transition-all duration-700">
+                        <div className="relative w-64 sm:w-72 lg:w-96 aspect-[3/4] rounded-[2rem] overflow-visible group transform-gpu hover:rotate-y-[-5deg] hover:rotate-x-[5deg] transition-all duration-700 mt-10 md:mt-0">
 
                             {/* Premium Glow effect behind image */}
                             <div className="absolute -inset-4 bg-gradient-to-tr from-luxury-blue to-luxury-violet opacity-30 group-hover:opacity-60 blur-2xl transition-opacity duration-1000 rounded-[3rem] mix-blend-screen pointer-events-none"></div>
@@ -141,9 +141,9 @@ export default function Hero() {
                             </div>
 
                             {/* Floating Tech Badge */}
-                            <div className="absolute -bottom-6 -left-8 bg-black/60 backdrop-blur-2xl border border-white/10 p-5 rounded-2xl shadow-2xl transform group-hover:-translate-y-4 group-hover:scale-105 transition-all duration-700 z-20">
-                                <span className="text-[10px] uppercase tracking-widest text-white/40 block mb-2">Current Status</span>
-                                <span className="text-sm font-bold text-white flex items-center gap-3">
+                            <div className="absolute -bottom-6 -left-2 sm:-left-8 bg-black/60 backdrop-blur-2xl border border-white/10 p-3 sm:p-5 rounded-2xl shadow-2xl transform group-hover:-translate-y-4 group-hover:scale-105 transition-all duration-700 z-20">
+                                <span className="text-[8px] sm:text-[10px] uppercase tracking-widest text-white/40 block mb-1 sm:mb-2">Current Status</span>
+                                <span className="text-xs sm:text-sm font-bold text-white flex items-center gap-2 sm:gap-3">
                                     <div className="flex items-center justify-center relative">
                                         <div className="w-2.5 h-2.5 rounded-full bg-blue-500 absolute animate-ping opacity-75"></div>
                                         <div className="w-2.5 h-2.5 rounded-full bg-luxury-blue relative"></div>
@@ -153,7 +153,7 @@ export default function Hero() {
                             </div>
 
                             {/* Abstract Floating Graphic */}
-                            <div className="absolute -top-10 -right-6 w-24 h-24 border border-luxury-violet/30 rounded-full flex items-center justify-center animate-spin-slow z-0">
+                            <div className="absolute -top-6 sm:-top-10 -right-2 sm:-right-6 w-16 h-16 sm:w-24 sm:h-24 border border-luxury-violet/30 rounded-full flex items-center justify-center animate-spin-slow z-0">
                                 <div className="w-full h-[1px] bg-luxury-violet/30 absolute"></div>
                                 <div className="h-full w-[1px] bg-luxury-violet/30 absolute"></div>
                             </div>

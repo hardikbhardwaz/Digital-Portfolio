@@ -18,9 +18,9 @@ export default function FloatingWhatsApp() {
             target="_blank"
             rel="noreferrer"
             aria-label="Chat on WhatsApp"
-            className="fixed bottom-6 right-6 z-50 p-4 rounded-full bg-[#25D366] text-white shadow-2xl hover:scale-110 hover:-translate-y-2 transition-all duration-300 flex items-center justify-center group"
+            className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-[100] p-3 md:p-4 rounded-full bg-[#25D366] text-white shadow-2xl hover:scale-110 hover:-translate-y-2 transition-all duration-300 flex items-center justify-center group"
         >
-            <MessageCircle size={32} />
+            <MessageCircle className="w-6 h-6 md:w-8 md:h-8" />
 
             {/* Pulse effect */}
             <span className="absolute inset-0 rounded-full bg-[#25D366] opacity-50 shadow-[0_0_20px_#25D366] -z-10 animate-ping"></span>
