@@ -40,7 +40,7 @@ export default function ChatWidget() {
                                 <button
                                     key={i}
                                     onClick={() => append({ role: 'user', content: btnText })}
-                                    className="text-xs px-4 py-2 text-left rounded-lg border border-luxury-blue/30 text-white/90 bg-luxury-blue/10 hover:bg-luxury-blue hover:text-white transition-all duration-300 w-full"
+                                    className="text-xs px-4 py-2 text-left rounded-lg border border-luxury-blue/30 text-white/90 bg-luxury-blue/10 hover:bg-luxury-blue hover:text-white hover:-translate-y-0.5 transition-all duration-300 w-full shadow-sm"
                                 >
                                     {btnText}
                                 </button>
@@ -67,7 +67,7 @@ export default function ChatWidget() {
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.9, y: 20 }}
                         transition={{ type: "spring", stiffness: 260, damping: 20 }}
-                        className="pointer-events-auto bg-black/80 backdrop-blur-2xl border border-white/10 shadow-[0_0_50px_rgba(0,0,0,0.8)] rounded-2xl w-[90vw] md:w-[400px] h-[500px] max-h-[70vh] flex flex-col mb-4 overflow-hidden"
+                        className="pointer-events-auto bg-black/80 backdrop-blur-2xl border border-white/10 shadow-[0_0_50px_rgba(0,0,0,0.8)] rounded-2xl w-[90vw] md:w-[400px] h-[500px] max-h-[70vh] flex flex-col mb-4 overflow-hidden overscroll-none"
                     >
                         {/* Chat Header */}
                         <div className="p-4 border-b border-white/10 bg-gradient-to-r from-luxury-blue/20 to-luxury-violet/20 flex items-center justify-between relative overflow-hidden">
@@ -97,9 +97,14 @@ export default function ChatWidget() {
                         </div>
 
                         {/* Chat Messages */}
-                        <div className="flex-1 overflow-y-auto p-4 space-y-4 scrollbar-thin scrollbar-thumb-white/10 scrollbar-track-transparent">
+                        <div className="flex-1 overflow-y-auto overscroll-contain scroll-smooth p-4 space-y-4 scrollbar-thin scrollbar-thumb-white/10 scrollbar-track-transparent">
                             {messages.map((m: any) => (
-                                <div key={m.id} className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}>
+                                <motion.div
+                                    initial={{ opacity: 0, y: 10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    key={m.id}
+                                    className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}
+                                >
                                     <div className={`flex gap-2 max-w-[85%] ${m.role === 'user' ? 'flex-row-reverse' : 'flex-row'}`}>
 
                                         <div className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center bg-black/50 border border-white/10 mt-1">
@@ -113,7 +118,7 @@ export default function ChatWidget() {
                                             {parseMessageContent(m.content, m.role)}
                                         </div>
                                     </div>
-                                </div>
+                                </motion.div>
                             ))}
 
                             {isLoading && (
@@ -137,10 +142,11 @@ export default function ChatWidget() {
                         <form onSubmit={handleSubmit} className="p-3 border-t border-white/10 bg-black/50 relative">
                             <div className="relative flex items-center">
                                 <input
+                                    autoFocus
                                     value={input}
                                     onChange={handleInputChange}
                                     placeholder="Ask me anything..."
-                                    className="w-full bg-white/5 border border-white/10 rounded-full pl-4 pr-12 py-3 text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-luxury-blue/50 transition-colors"
+                                    className="w-full bg-white/5 border border-white/10 rounded-full pl-4 pr-12 py-3 text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-luxury-blue/50 transition-colors shadow-inner"
                                 />
                                 <button
                                     type="submit"
