@@ -9,6 +9,7 @@ import Contact from '@/components/sections/Contact';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import FloatingWhatsApp from '@/components/FloatingWhatsApp';
 import FloatingBrochure from '@/components/FloatingBrochure';
+import ChatWidget from '@/components/ChatWidget';
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <ThemeToggle />
       <FloatingWhatsApp />
       <FloatingBrochure />
+      <ChatWidget />
       <div className="fixed inset-0 z-[-1] bg-background">
         <CanvasWrapper />
       </div>

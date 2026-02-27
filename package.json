@@ -9,8 +9,10 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@ai-sdk/google": "^0.0.14",
     "@react-three/drei": "^10.7.7",
     "@react-three/fiber": "^9.5.0",
+    "ai": "^3.1.28",
     "clsx": "^2.1.1",
     "framer-motion": "^12.34.3",
     "gsap": "^3.14.2",
