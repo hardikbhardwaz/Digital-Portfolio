@@ -37,7 +37,7 @@ export async function POST(req: Request) {
             temperature: 0.7,
         });
 
-        return result.toTextStreamResponse();
+        return result.toAIStreamResponse();
     } catch (error) {
         console.error('Gemini API Error:', error);
         return new Response(JSON.stringify({ error: 'Failed to communicate with AI provider.' }), { status: 500 });
