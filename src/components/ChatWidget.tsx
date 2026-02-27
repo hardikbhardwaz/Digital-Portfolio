@@ -9,12 +9,48 @@ import MagneticWrapper from './MagneticWrapper';
 export default function ChatWidget() {
     const [isOpen, setIsOpen] = useState(false);
     const messagesEndRef = useRef<HTMLDivElement>(null);
-    const { messages, input, handleInputChange, handleSubmit, isLoading } = useChat({
+    const { messages, input, handleInputChange, handleSubmit, isLoading, append } = useChat({
         api: '/api/chat',
         initialMessages: [
-            { id: '1', role: 'assistant', content: "Hi! I'm Hardik's AI assistant. I can answer questions about his digital marketing strategies, web development expertise, or how we can help scale your brand. What would you like to know?" }
+            { id: '1', role: 'assistant', content: "Hardik helps businesses grow through performance marketing, conversion-focused websites, and AI automation.\n\nWhat would you like to explore?\n[ Lead generation ]\n[ Website & funnels ]\n[ AI Automation ]" }
         ]
     });
+
+    const parseMessageContent = (content: string, role: string) => {
+        if (role === 'user') return <>{content}</>;
+
+        // Regex to find things exactly like [ Button Text ] (with or without spaces inside)
+        const buttonRegex = /\[(.*?)\]/g;
+        const matches = Array.from(content.matchAll(buttonRegex));
+
+        // The display text is everything EXCEPT the buttons (we remove the buttons from the text)
+        const displayText = content.replace(buttonRegex, '').trim();
+
+        return (
+            <div className="flex flex-col space-y-3 w-full">
+                {displayText && (
+                    <div className="whitespace-pre-wrap">{displayText}</div>
+                )}
+
+                {matches.length > 0 && (
+                    <div className="flex flex-col gap-2 mt-2 w-full">
+                        {matches.map((match, i) => {
+                            const btnText = match[1].trim();
+                            return (
+                                <button
+                                    key={i}
+                                    onClick={() => append({ role: 'user', content: btnText })}
+                                    className="text-xs px-4 py-2 text-left rounded-lg border border-luxury-blue/30 text-white/90 bg-luxury-blue/10 hover:bg-luxury-blue hover:text-white transition-all duration-300 w-full"
+                                >
+                                    {btnText}
+                                </button>
+                            );
+                        })}
+                    </div>
+                )}
+            </div>
+        );
+    };
 
     // Auto-scroll to bottom of chat
     useEffect(() => {
@@ -72,9 +108,9 @@ export default function ChatWidget() {
 
                                         <div className={`p-3 rounded-2xl text-sm ${m.role === 'user'
                                             ? 'bg-luxury-blue text-white rounded-tr-sm'
-                                            : 'bg-white/5 border border-white/10 text-white/90 rounded-tl-sm'
+                                            : 'bg-white/5 border border-white/10 text-white/90 rounded-tl-sm w-full'
                                             }`}>
-                                            {m.content}
+                                            {parseMessageContent(m.content, m.role)}
                                         </div>
                                     </div>
                                 </div>
