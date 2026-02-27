@@ -134,6 +134,7 @@ export default function Hero() {
                                     src="/Hardik.png"
                                     alt="Hardik Sharma"
                                     fill
+                                    priority
                                     className="w-full h-full object-cover grayscale mix-blend-luminosity opacity-80 group-hover:grayscale-0 group-hover:mix-blend-normal group-hover:opacity-100 scale-105 group-hover:scale-110 transition-all duration-1000"
                                 />
 

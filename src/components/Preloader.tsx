@@ -13,7 +13,7 @@ export default function Preloader() {
 
         // Simulate a loading sequence
         let currentProgress = 0;
-        const totalDuration = 2000; // 2 seconds total loading animation
+        const totalDuration = 800; // 0.8 seconds total loading animation
         const intervalTime = 20; // update every 20ms
         const increment = (100 / (totalDuration / intervalTime));
 
@@ -30,7 +30,7 @@ export default function Preloader() {
                 setTimeout(() => {
                     setIsLoading(false);
                     document.body.style.overflow = '';
-                }, 400);
+                }, 150);
             } else {
                 setProgress(Math.floor(currentProgress));
             }

@@ -136,7 +136,7 @@ If the user does not respond for a while or hesitates, you can fallback: "Would 
             model: google('models/gemini-2.5-flash'),
             system: systemPrompt,
             messages,
-            temperature: 0.7,
+            temperature: 0.2,
             tools: {
                 captureLead: tool({
                     description: 'Capture a lead and send it to Google Sheets / Make.com Webhook when all details are gathered.',
