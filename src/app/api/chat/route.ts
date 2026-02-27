@@ -1,5 +1,6 @@
 import { google } from '@ai-sdk/google';
-import { streamText } from 'ai';
+import { streamText, tool } from 'ai';
+import { z } from 'zod';
 
 // Allow streaming responses up to 30 seconds
 export const maxDuration = 30;
@@ -100,15 +101,72 @@ Would you like a beginner roadmap or advanced strategy?
 - SMART MODE SWITCH: After answering general questions, eventually softly connect back to Hardik's expertise.
 Example: "If you want, Hardik also provides practical mentorship and real project guidance. Would you like to explore that? [ Yes, show me ] [ No, thanks ]"
 
+🚨 11. LEAD CAPTURE STRATEGY & CRM WEBHOOK
+Never ask all details at once. Capture step-by-step in a premium way.
+Follow this precise FLOW:
+- Step 1: Soft entry -> "Would you like a quick growth plan tailored to your business?" [ Yes ], [ Maybe later ]
+- Step 2: Name -> "Great. Let's start with your name."
+- Step 3: Business -> "Nice to meet you, {Name}. What kind of business do you run?" [ School ], [ E-commerce ], [ B2B ], [ Startup ], [ Other ]
+- Step 4: Goal -> "What is your main goal right now?" [ More leads ], [ Sales growth ], [ Branding ], [ Automation ]
+- Step 5: Contact -> "To share a proper strategy, how can we reach you? Please provide your Phone / WhatsApp and Email."
+- Step 6: TRIGGER TOOL -> Once you have Name, Phone, Email, Business, and Goal, CALL THE 'captureLead' tool to save the data securely to Google Sheets / CRM.
+- Step 7: Confirmation -> "Thanks. Hardik will review your details and share a tailored strategy soon. Would you like to schedule a quick call?" [ Book call ], [ WhatsApp chat ]
+
+If the user does not respond for a while or hesitates, you can fallback: "Would you still like a quick strategy for your business?"
+
 🚨 EXTREMELY IMPORTANT: Do NOT use markdown bolding or italics for buttons. You MUST use EXACTLY the bracket format with spaces inside: [ Button Text ] so the frontend can parse it.
     `;
 
     try {
         const result = await streamText({
-            model: google('models/gemini-2.5-flash'),
+            model: google('models/gemini-1.5-pro'),
             system: systemPrompt,
             messages,
             temperature: 0.7,
+            tools: {
+                captureLead: tool({
+                    description: 'Capture a lead and send it to Google Sheets / Make.com Webhook when all details are gathered.',
+                    parameters: z.object({
+                        name: z.string().describe('The name of the lead.'),
+                        phone: z.string().describe('The phone number or WhatsApp of the lead.'),
+                        email: z.string().email().describe('The email address of the lead.'),
+                        business: z.string().describe('The type of business (e.g. School, E-commerce).'),
+                        goal: z.string().describe('The main goal of the lead (e.g. More leads, Automation).'),
+                        budget: z.string().optional().describe('The budget if provided by the user.'),
+                        timeline: z.string().optional().describe('The timeline if provided by the user.')
+                    }),
+                    execute: async ({ name, phone, email, business, goal, budget, timeline }) => {
+                        console.log('CRM TRIGGER: Capturing Lead', { name, phone, email, business, goal, budget, timeline });
+
+                        const webhookUrl = process.env.MAKE_WEBHOOK_URL;
+
+                        if (webhookUrl) {
+                            try {
+                                await fetch(webhookUrl, {
+                                    method: 'POST',
+                                    headers: { 'Content-Type': 'application/json' },
+                                    body: JSON.stringify({
+                                        date: new Date().toISOString(),
+                                        name,
+                                        phone,
+                                        email,
+                                        business,
+                                        goal,
+                                        budget: budget || '',
+                                        timeline: timeline || '',
+                                        source: 'Website chatbot'
+                                    })
+                                });
+                            } catch (e) {
+                                console.error('Failed to send webhook to CRM', e);
+                            }
+                        }
+
+                        // Inform the AI that the action succeeded so it can output the Confirmation step
+                        return { success: true, message: 'Lead successfully captured and sent to Google Sheets.' };
+                    },
+                }),
+            },
         });
 
         return result.toAIStreamResponse();
