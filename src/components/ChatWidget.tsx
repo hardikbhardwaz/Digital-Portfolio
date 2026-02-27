@@ -163,23 +163,27 @@ export default function ChatWidget() {
 
             {/* Floating Toggle Button */}
             <div className={`pointer-events-auto transition-all duration-500 ${isOpen ? 'scale-0 opacity-0' : 'scale-100 opacity-100'}`}>
-                <MagneticWrapper strength={20}>
+                <MagneticWrapper strength={30}>
                     <button
                         onClick={() => setIsOpen(true)}
-                        className="relative group flex items-center justify-center p-3 md:p-4 rounded-full bg-black/60 backdrop-blur-xl border border-white/10 text-white shadow-[0_0_40px_rgba(0,0,0,0.8)] hover:bg-white hover:text-black hover:scale-110 transition-all duration-500"
+                        className="relative group flex items-center justify-center p-4 md:p-5 rounded-full outline-none"
                     >
-                        {/* Animated gradient hover fill */}
-                        <div className="absolute inset-0 bg-gradient-to-r from-luxury-blue/30 to-luxury-violet/30 opacity-0 group-hover:opacity-100 rounded-full transition-opacity duration-300 pointer-events-none"></div>
+                        {/* Glowing Core */}
+                        <div className="absolute inset-0 rounded-full bg-black/80 backdrop-blur-2xl border border-white/20 shadow-[0_0_30px_rgba(0,85,255,0.3)] group-hover:shadow-[0_0_50px_rgba(143,0,255,0.5)] transition-all duration-700 z-0"></div>
 
-                        <MessageSquare className="w-6 h-6 md:w-8 md:h-8 relative z-10" />
+                        {/* Spinning Halo */}
+                        <div className="absolute inset-[-4px] rounded-full bg-[conic-gradient(from_0deg,transparent,#0055ff,#8f00ff,transparent)] animate-[spin_4s_linear_infinite] opacity-50 group-hover:opacity-100 transition-opacity duration-500 z-[-1] blur-sm"></div>
 
-                        {/* Glowing ring */}
-                        <span className="absolute inset-0 rounded-full border border-luxury-blue/50 group-hover:border-transparent transition-colors duration-300"></span>
+                        {/* Icon Container */}
+                        <div className="relative z-10 flex items-center justify-center transform group-hover:scale-110 transition-transform duration-500">
+                            <Bot className="w-6 h-6 md:w-7 md:h-7 text-white group-hover:text-luxury-blue transition-colors duration-500" />
+                            <Sparkles className="absolute -top-2 -right-2 w-4 h-4 text-luxury-violet animate-bounce" />
+                        </div>
 
                         {/* Status dot */}
-                        <span className="absolute top-0 right-0 w-3 h-3 flex items-center justify-center">
-                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-luxury-blue opacity-75"></span>
-                            <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-400"></span>
+                        <span className="absolute top-1 right-1 w-3 h-3 flex items-center justify-center z-20">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                            <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
                         </span>
                     </button>
                 </MagneticWrapper>
