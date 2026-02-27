@@ -58,7 +58,7 @@ export default function ChatWidget() {
     }, [messages]);
 
     return (
-        <div className="fixed bottom-24 right-4 md:bottom-28 md:right-6 z-[100] flex flex-col items-end pointer-events-none">
+        <div className="fixed bottom-24 right-4 md:bottom-28 md:right-6 z-[100] flex flex-col items-end pointer-events-none w-full md:w-auto">
 
             <AnimatePresence>
                 {isOpen && (
@@ -67,7 +67,7 @@ export default function ChatWidget() {
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.9, y: 20 }}
                         transition={{ type: "spring", stiffness: 260, damping: 20 }}
-                        className="pointer-events-auto bg-black/80 backdrop-blur-2xl border border-white/10 shadow-[0_0_50px_rgba(0,0,0,0.8)] rounded-2xl w-[90vw] md:w-[400px] h-[500px] max-h-[70vh] flex flex-col mb-4 overflow-hidden overscroll-none"
+                        className="pointer-events-auto fixed inset-0 md:static bg-black/95 md:bg-black/80 backdrop-blur-3xl md:backdrop-blur-2xl border-0 md:border md:border-white/10 shadow-[0_0_50px_rgba(0,0,0,0.8)] md:rounded-2xl w-full h-[100dvh] md:h-[500px] md:max-h-[70vh] flex flex-col z-[200] md:mb-4 overflow-hidden overscroll-none"
                     >
                         {/* Chat Header */}
                         <div className="p-4 border-b border-white/10 bg-gradient-to-r from-luxury-blue/20 to-luxury-violet/20 flex items-center justify-between relative overflow-hidden">
@@ -139,21 +139,21 @@ export default function ChatWidget() {
                         </div>
 
                         {/* Input Area */}
-                        <form onSubmit={handleSubmit} className="p-3 border-t border-white/10 bg-black/50 relative">
+                        <form onSubmit={handleSubmit} className="p-3 md:p-4 border-t border-white/10 bg-black/80 backdrop-blur-md relative pb-8 md:pb-4">
                             <div className="relative flex items-center">
                                 <input
                                     autoFocus
                                     value={input}
                                     onChange={handleInputChange}
                                     placeholder="Ask me anything..."
-                                    className="w-full bg-white/5 border border-white/10 rounded-full pl-4 pr-12 py-3 text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-luxury-blue/50 transition-colors shadow-inner"
+                                    className="w-full bg-white/5 border border-white/10 rounded-full pl-5 pr-14 py-4 text-base md:text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-luxury-blue/50 transition-colors shadow-inner"
                                 />
                                 <button
                                     type="submit"
                                     disabled={isLoading || !input.trim()}
-                                    className="absolute right-2 p-2 bg-luxury-blue hover:bg-luxury-violet rounded-full text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                                    className="absolute right-2 p-2.5 bg-luxury-blue hover:bg-luxury-violet rounded-full text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                                 >
-                                    <Send className="w-4 h-4" />
+                                    <Send className="w-5 h-5 md:w-4 md:h-4" />
                                 </button>
                             </div>
                         </form>
