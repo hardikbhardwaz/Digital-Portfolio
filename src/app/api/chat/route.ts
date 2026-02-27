@@ -119,7 +119,7 @@ If the user does not respond for a while or hesitates, you can fallback: "Would 
 
     try {
         const result = await streamText({
-            model: google('models/gemini-1.5-pro'),
+            model: google('gemini-1.5-pro'),
             system: systemPrompt,
             messages,
             temperature: 0.7,
