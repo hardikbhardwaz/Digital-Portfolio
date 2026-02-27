@@ -2,6 +2,9 @@ import { google } from '@ai-sdk/google';
 import { streamText, tool } from 'ai';
 import { z } from 'zod';
 
+export const runtime = 'edge';
+export const preferredRegion = 'auto';
+
 // Allow streaming responses up to 30 seconds
 export const maxDuration = 30;
 

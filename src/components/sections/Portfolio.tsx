@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ArrowRight, PlayCircle } from 'lucide-react';
+import Image from 'next/image';
 import MagneticWrapper from '../MagneticWrapper';
 
 type Category = 'All' | 'Marketing' | 'Graphics' | 'Video' | 'Web';
@@ -133,10 +134,11 @@ export default function Portfolio() {
                                         className="w-full h-full object-cover scale-[1.05] grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700"
                                     />
                                 ) : (
-                                    <img
+                                    <Image
+                                        fill
                                         src={project.image}
                                         alt={project.title}
-                                        className="w-full h-full object-cover scale-[1.05] grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700"
+                                        className="object-cover scale-[1.05] grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700"
                                     />
                                 )}
                             </div>
@@ -186,7 +188,7 @@ export default function Portfolio() {
                                 {selectedProject.videoUrl ? (
                                     <video src={selectedProject.videoUrl} autoPlay loop muted playsInline className="w-full h-full object-cover opacity-80" />
                                 ) : (
-                                    <img src={selectedProject.image} alt={selectedProject.title} className="w-full h-full object-cover opacity-80" />
+                                    <Image fill src={selectedProject.image} alt={selectedProject.title} className="object-cover opacity-80" />
                                 )}
                             </div>
 

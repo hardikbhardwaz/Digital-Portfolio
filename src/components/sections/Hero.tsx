@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ArrowRight, Presentation } from 'lucide-react';
+import Image from 'next/image';
 import MagneticWrapper from '../MagneticWrapper';
 
 export default function Hero() {
@@ -128,11 +129,11 @@ export default function Hero() {
 
                             {/* Main Image Mask */}
                             <div className="absolute inset-0 rounded-[2rem] overflow-hidden border border-white/10 shadow-[0_0_80px_rgba(0,0,0,0.8)] bg-black/50 z-10 transition-transform duration-700 group-hover:scale-[1.02]">
-                                {/* NOTE: Using placeholder, User will swap with /profile.png */}
-                                <img
+                                {/* NOTE: Using placeholder, User will swap with /Hardik.png */}
+                                <Image
                                     src="/Hardik.png"
                                     alt="Hardik Sharma"
-                                    onError={(e) => { e.currentTarget.src = 'https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&q=80'; }}
+                                    fill
                                     className="w-full h-full object-cover grayscale mix-blend-luminosity opacity-80 group-hover:grayscale-0 group-hover:mix-blend-normal group-hover:opacity-100 scale-105 group-hover:scale-110 transition-all duration-1000"
                                 />
 

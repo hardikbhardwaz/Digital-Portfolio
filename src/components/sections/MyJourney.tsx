@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Image from 'next/image';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -52,10 +53,11 @@ export default function MyJourney() {
                 {/* Left: Large Cinematic Image */}
                 <div className="journey-text relative aspect-[4/5] rounded-[2rem] overflow-hidden border border-border">
                     <div className="absolute inset-0 bg-luxury-blue/10 mix-blend-overlay z-10"></div>
-                    <img
+                    <Image
+                        fill
                         src="https://images.unsplash.com/photo-1549692520-acc6669e2f0c?auto=format&fit=crop&q=80"
                         alt="Hardik Sharma - Global Digital Expert"
-                        className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000 scale-105 hover:scale-100"
+                        className="object-cover grayscale hover:grayscale-0 transition-all duration-1000 scale-105 hover:scale-100"
                     />
                     <div className="absolute bottom-6 left-6 right-6 p-6 glass rounded-xl border border-white/10 backdrop-blur-md z-20 overflow-hidden">
                         <div className="absolute top-0 left-0 w-1 bg-luxury-blue h-full"></div>

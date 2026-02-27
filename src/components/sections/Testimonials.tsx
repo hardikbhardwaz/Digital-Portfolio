@@ -4,6 +4,7 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Quote } from 'lucide-react';
+import Image from 'next/image';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -60,7 +61,7 @@ export default function Testimonials() {
                         <p className="text-foreground/80 font-light text-lg leading-relaxed mb-10 italic relative z-10">&quot;{t.quote}&quot;</p>
 
                         <div className="mt-auto flex items-center gap-4">
-                            <img src={t.image} alt={t.name} className="w-14 h-14 rounded-full object-cover border border-border grayscale" />
+                            <Image width={56} height={56} src={t.image} alt={t.name} className="w-14 h-14 rounded-full object-cover border border-border grayscale" />
                             <div>
                                 <h4 className="font-heading font-bold text-foreground">{t.name}</h4>
                                 <span className="text-xs text-foreground/50 uppercase tracking-widest font-semibold">{t.role}</span>

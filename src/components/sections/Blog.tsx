@@ -4,6 +4,7 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowUpRight } from 'lucide-react';
+import Image from 'next/image';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -58,7 +59,7 @@ export default function Blog() {
                 {ARTICLES.map((article, i) => (
                     <div key={i} className="article-card group cursor-pointer">
                         <div className="w-full aspect-video rounded-2xl overflow-hidden mb-6 relative">
-                            <img src={article.image} alt={article.title} className="w-full h-full object-cover grayscale opacity-80 group-hover:scale-105 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" />
+                            <Image fill src={article.image} alt={article.title} className="w-full h-full object-cover grayscale opacity-80 group-hover:scale-105 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" />
                         </div>
                         <div className="flex items-center gap-4 mb-3">
                             <span className="px-3 py-1 bg-foreground/5 rounded-full text-xs font-bold uppercase tracking-wider text-luxury-blue">{article.category}</span>

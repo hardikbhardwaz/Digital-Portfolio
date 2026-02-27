@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Folder, FileVideo, FileCode2, LineChart, FileText, ArrowRight, ChevronRight, Cloud } from 'lucide-react';
+import Image from 'next/image';
 import MagneticWrapper from '../MagneticWrapper';
 
 type CategoryType = 'All' | 'Digital Marketing' | 'Funnels' | 'Graphics' | 'Video' | 'Automation' | 'Websites';
@@ -148,7 +149,7 @@ export default function WorkVault() {
                                         >
                                             {/* Preview Image */}
                                             <div className="w-full aspect-video bg-black relative overflow-hidden">
-                                                <img src={file.thumb} alt={file.name} className="w-full h-full object-cover opacity-50 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 grayscale group-hover:grayscale-0" />
+                                                <Image fill src={file.thumb} alt={file.name} className="w-full h-full object-cover opacity-50 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 grayscale group-hover:grayscale-0" />
                                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
                                                 <div className="absolute bottom-4 left-4 flex items-center gap-2 text-white">
                                                     {getIcon(file.type)}
@@ -194,7 +195,7 @@ export default function WorkVault() {
 
                                 {/* Left Column: Image with Extraordinary Scanning Effects */}
                                 <div className="w-full md:w-[45%] h-64 md:h-auto overflow-hidden relative group bg-black">
-                                    <img src={selectedFile.thumb} alt={selectedFile.name} className="w-full h-full object-cover grayscale mix-blend-luminosity opacity-40 group-hover:grayscale-0 group-hover:opacity-100 group-hover:mix-blend-normal transition-all duration-1000 scale-105 group-hover:scale-100" />
+                                    <Image fill src={selectedFile.thumb} alt={selectedFile.name} className="w-full h-full object-cover grayscale mix-blend-luminosity opacity-40 group-hover:grayscale-0 group-hover:opacity-100 group-hover:mix-blend-normal transition-all duration-1000 scale-105 group-hover:scale-100" />
 
                                     {/* Holographic Glowing Overlay */}
                                     <div className="absolute inset-0 bg-gradient-to-tr from-luxury-blue/40 to-luxury-violet/40 mix-blend-color opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none"></div>

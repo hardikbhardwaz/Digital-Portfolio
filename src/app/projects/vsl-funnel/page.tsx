@@ -2,6 +2,7 @@
 
 import { ArrowLeft, Play, ArrowRight, CheckCircle2 } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 import MagneticWrapper from '@/components/MagneticWrapper';
 
 export default function VSLFunnel() {
@@ -31,7 +32,7 @@ export default function VSLFunnel() {
 
                 {/* Video Player Mockup */}
                 <div className="w-full max-w-4xl bg-[#111] p-2 rounded-3xl border border-white/10 shadow-[0_0_100px_rgba(239,68,68,0.15)] relative group cursor-pointer aspect-video flex items-center justify-center overflow-hidden mb-16">
-                    <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80" alt="VSL Thumbnail" className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:scale-105 transition-transform duration-700" />
+                    <Image fill src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80" alt="VSL Thumbnail" className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:scale-105 transition-transform duration-700" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
 
                     <div className="relative z-10 w-24 h-24 bg-red-500/90 rounded-full flex items-center justify-center shadow-[0_0_50px_rgba(239,68,68,0.5)] group-hover:scale-110 transition-transform">
