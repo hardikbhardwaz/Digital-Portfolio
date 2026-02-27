@@ -119,7 +119,7 @@ If the user does not respond for a while or hesitates, you can fallback: "Would 
 
     try {
         const result = await streamText({
-            model: google('gemini-1.5-pro'),
+            model: google('models/gemini-2.5-flash'),
             system: systemPrompt,
             messages,
             temperature: 0.7,
@@ -170,8 +170,8 @@ If the user does not respond for a while or hesitates, you can fallback: "Would 
         });
 
         return result.toAIStreamResponse();
-    } catch (error) {
+    } catch (error: any) {
         console.error('Gemini API Error:', error);
-        return new Response(JSON.stringify({ error: 'Failed to communicate with AI provider.' }), { status: 500 });
+        return new Response(JSON.stringify({ error: 'Failed to communicate with AI provider.', details: error?.message || error?.toString() }), { status: 500 });
     }
 }
