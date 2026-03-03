@@ -11,33 +11,43 @@ export default function Preloader() {
         // Prevent scrolling while loading
         document.body.style.overflow = 'hidden';
 
-        // Simulate a loading sequence
+        // Fast increment for visual pleasure, but actual removal depends on DOM
         let currentProgress = 0;
-        const totalDuration = 800; // 0.8 seconds total loading animation
-        const intervalTime = 20; // update every 20ms
-        const increment = (100 / (totalDuration / intervalTime));
+        const intervalTime = 15;
+        const increment = 5; // Fast fake progress
 
         const interval = setInterval(() => {
             currentProgress += increment;
 
-            // Add a little randomness so it looks realistic
-            if (currentProgress > 100) {
-                currentProgress = 100;
-                setProgress(100);
-                clearInterval(interval);
-
-                // Keep the 100% on screen for just a fraction of a second before hiding
-                setTimeout(() => {
-                    setIsLoading(false);
-                    document.body.style.overflow = '';
-                }, 150);
-            } else {
+            if (currentProgress < 95) {
                 setProgress(Math.floor(currentProgress));
             }
         }, intervalTime);
 
+        // Core Web Vitals Fix: Don't block LCP artificially. 
+        // Once the window is fully loaded (React + Images + CSS), instantly finish the progress.
+        const finishLoading = () => {
+            clearInterval(interval);
+            setProgress(100);
+
+            // Give 100% just a tiny 150ms beat to register visually before fading
+            setTimeout(() => {
+                setIsLoading(false);
+                document.body.style.overflow = '';
+            }, 150);
+        };
+
+        if (document.readyState === 'complete') {
+            finishLoading();
+        } else {
+            window.addEventListener('load', finishLoading);
+            // Fallback just in case some rogue script holds open the load event
+            setTimeout(finishLoading, 600);
+        }
+
         return () => {
             clearInterval(interval);
+            window.removeEventListener('load', finishLoading);
             document.body.style.overflow = '';
         };
     }, []);
