@@ -51,10 +51,16 @@ export default function Skills() {
                 '.skill-card',
                 { opacity: 0, rotateY: -15, z: -100 },
                 {
-                    opacity: 1, rotateY: 0, z: 0, stagger: 0.1, duration: 1.2, ease: 'power3.out',
+                    opacity: 1,
+                    rotateY: 0,
+                    z: 0,
+                    stagger: 0.1,
+                    ease: 'none',
                     scrollTrigger: {
                         trigger: cRef.current,
-                        start: 'top 75%',
+                        start: 'top 85%',
+                        end: 'top 20%',
+                        scrub: 1
                     }
                 }
             );

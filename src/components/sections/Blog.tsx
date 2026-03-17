@@ -32,8 +32,16 @@ export default function Blog() {
                 '.article-card',
                 { opacity: 0, scale: 0.95 },
                 {
-                    opacity: 1, scale: 1, stagger: 0.2, duration: 1, ease: 'power2.out',
-                    scrollTrigger: { trigger: cRef.current, start: 'top 80%' }
+                    opacity: 1,
+                    scale: 1,
+                    stagger: 0.2,
+                    ease: 'none',
+                    scrollTrigger: {
+                        trigger: cRef.current,
+                        start: 'top 85%',
+                        end: 'top 30%',
+                        scrub: 1
+                    }
                 }
             );
         }, cRef);

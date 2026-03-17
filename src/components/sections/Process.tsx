@@ -22,8 +22,16 @@ export default function Process() {
                 '.process-step',
                 { opacity: 0, x: -30 },
                 {
-                    opacity: 1, x: 0, stagger: 0.2, duration: 1, ease: 'power2.out',
-                    scrollTrigger: { trigger: cRef.current, start: 'top 75%' }
+                    opacity: 1,
+                    x: 0,
+                    stagger: 0.1,
+                    ease: 'none',
+                    scrollTrigger: {
+                        trigger: cRef.current,
+                        start: 'top 85%',
+                        end: 'top 40%',
+                        scrub: 1
+                    }
                 }
             );
         }, cRef);

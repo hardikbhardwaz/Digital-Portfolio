@@ -23,8 +23,16 @@ export default function Industries() {
                 '.industry-card',
                 { opacity: 0, scale: 0.9 },
                 {
-                    opacity: 1, scale: 1, stagger: 0.1, duration: 1, ease: 'back.out(1.5)',
-                    scrollTrigger: { trigger: cRef.current, start: 'top 80%' }
+                    opacity: 1,
+                    scale: 1,
+                    stagger: 0.1,
+                    ease: 'none',
+                    scrollTrigger: {
+                        trigger: cRef.current,
+                        start: 'top 85%',
+                        end: 'top 20%',
+                        scrub: 1
+                    }
                 }
             );
         }, cRef);

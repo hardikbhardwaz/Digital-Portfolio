@@ -38,8 +38,16 @@ export default function Testimonials() {
                 '.testimonial-card',
                 { opacity: 0, y: 40 },
                 {
-                    opacity: 1, y: 0, stagger: 0.2, duration: 1, ease: 'power3.out',
-                    scrollTrigger: { trigger: cRef.current, start: 'top 80%' }
+                    opacity: 1,
+                    y: 0,
+                    stagger: 0.2,
+                    ease: 'none',
+                    scrollTrigger: {
+                        trigger: cRef.current,
+                        start: 'top 85%',
+                        end: 'top 30%',
+                        scrub: 1
+                    }
                 }
             );
         }, cRef);

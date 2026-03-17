@@ -16,8 +16,16 @@ export default function MyJourney() {
                 '.journey-text',
                 { opacity: 0, y: 50 },
                 {
-                    opacity: 1, y: 0, stagger: 0.2, duration: 1.5, ease: 'power3.out',
-                    scrollTrigger: { trigger: containerRef.current, start: 'top 70%' }
+                    opacity: 1,
+                    y: 0,
+                    stagger: 0.1,
+                    ease: 'none',
+                    scrollTrigger: {
+                        trigger: containerRef.current,
+                        start: 'top 80%',
+                        end: 'top 40%',
+                        scrub: 1
+                    }
                 }
             );
 

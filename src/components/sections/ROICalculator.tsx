@@ -24,10 +24,15 @@ export default function ROICalculator() {
                 '.calc-item',
                 { opacity: 0, scale: 0.95 },
                 {
-                    opacity: 1, scale: 1, stagger: 0.1, duration: 1, ease: 'power2.out',
+                    opacity: 1,
+                    scale: 1,
+                    stagger: 0.1,
+                    ease: 'none',
                     scrollTrigger: {
                         trigger: containerRef.current,
-                        start: 'top 80%',
+                        start: 'top 85%',
+                        end: 'top 30%',
+                        scrub: 1
                     }
                 }
             );

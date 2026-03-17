@@ -17,10 +17,15 @@ export default function Contact() {
                 '.contact-fade',
                 { opacity: 0, y: 30 },
                 {
-                    opacity: 1, y: 0, stagger: 0.15, duration: 1, ease: 'power2.out',
+                    opacity: 1,
+                    y: 0,
+                    stagger: 0.15,
+                    ease: 'none',
                     scrollTrigger: {
                         trigger: cRef.current,
-                        start: 'top 80%',
+                        start: 'top 85%',
+                        end: 'top 30%',
+                        scrub: 1
                     }
                 }
             );
