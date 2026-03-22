@@ -9,21 +9,12 @@ import DnaHelix from './DnaHelix';
 import ScrollCam from './ScrollCam';
 
 export default function GlobalCanvas() {
-    const [dpr, setDpr] = useState(1);
-
-    useEffect(() => {
-        const timeout = setTimeout(() => {
-            setDpr(Math.min(window.devicePixelRatio, 2));
-        }, 0);
-        return () => clearTimeout(timeout);
-    }, []);
-
     return (
         <div className="fixed inset-0 z-[-1] pointer-events-none bg-background">
             <Canvas
                 camera={{ position: [0, 0, 8], fov: 75 }}
-                dpr={dpr}
-                gl={{ antialias: true, alpha: true }}
+                dpr={[1, 1.2]}
+                gl={{ antialias: false, alpha: true, powerPreference: "high-performance" }}
             >
                 <Suspense fallback={null}>
                     <fog attach="fog" args={['#000000', 5, 20]} />

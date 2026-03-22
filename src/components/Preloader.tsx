@@ -30,19 +30,17 @@ export default function Preloader() {
             clearInterval(interval);
             setProgress(100);
 
-            // Give 100% just a tiny 150ms beat to register visually before fading
-            setTimeout(() => {
-                setIsLoading(false);
-                document.body.style.overflow = '';
-            }, 150);
+            // Trigger unmount instantly to unblock interactivity
+            setIsLoading(false);
+            document.body.style.overflow = '';
         };
 
         if (document.readyState === 'complete') {
             finishLoading();
         } else {
             window.addEventListener('load', finishLoading);
-            // Fallback just in case some rogue script holds open the load event
-            setTimeout(finishLoading, 600);
+            // Drastically reduced fallback if network is choked
+            setTimeout(finishLoading, 300);
         }
 
         return () => {
@@ -59,7 +57,7 @@ export default function Preloader() {
                     key="preloader"
                     initial={{ y: 0 }}
                     exit={{ y: '-100%', borderBottomLeftRadius: '50%', borderBottomRightRadius: '50%' }}
-                    transition={{ duration: 1, ease: [0.76, 0, 0.24, 1] }} // smooth cubic bezier curve
+                    transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1] }} 
                     className="fixed inset-0 z-[99999] flex flex-col items-center justify-center bg-background pointer-events-auto"
                 >
                     <div className="flex flex-col items-center gap-12 w-full max-w-sm px-8">
