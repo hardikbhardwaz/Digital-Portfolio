@@ -6,7 +6,7 @@ import { ThemeProvider } from '@/components/theme-provider';
 import SmoothScrolling from '@/components/SmoothScrolling';
 import Cursor from '@/components/Cursor';
 import Preloader from '@/components/Preloader';
-import { Analytics } from '@vercel/analytics/react';
+import { Analytics } from '@vercel/analytics/next';
 
 const inter = Inter({
   subsets: ['latin'],
