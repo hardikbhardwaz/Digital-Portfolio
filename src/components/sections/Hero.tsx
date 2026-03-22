@@ -27,6 +27,11 @@ export default function Hero() {
                 { opacity: 0, y: 15 },
                 { opacity: 1, y: 0, duration: 2, delay: 0.8, stagger: 0.15, ease: 'power3.out' }
             );
+            gsap.fromTo(
+                '.hero-photo',
+                { opacity: 0, x: 30 },
+                { opacity: 1, x: 0, duration: 1.8, delay: 0.2, ease: 'power4.out' }
+            );
         }, containerRef);
 
         return () => ctx.revert();
@@ -119,13 +124,13 @@ export default function Hero() {
                 </div>
 
                 {/* Creative Right Side (Image Identity) */}
-                <div className="hero-element flex w-full md:w-[40%] lg:w-[35%] justify-center items-center relative z-10" style={{ perspective: '1200px' }}>
+                <div className="hero-photo flex w-full md:w-[40%] lg:w-[35%] justify-center items-center relative z-10" style={{ perspective: '1200px' }}>
 
                     <MagneticWrapper strength={15}>
                         <div className="relative w-64 sm:w-72 lg:w-96 aspect-[3/4] rounded-[2rem] overflow-visible group transform-gpu hover:rotate-y-[-5deg] hover:rotate-x-[5deg] transition-all duration-700 mt-10 md:mt-0">
 
-                            {/* Premium Glow effect behind image */}
-                            <div className="absolute -inset-4 bg-gradient-to-tr from-luxury-blue to-luxury-violet opacity-30 group-hover:opacity-60 blur-2xl transition-opacity duration-1000 rounded-[3rem] mix-blend-screen pointer-events-none"></div>
+                            {/* Premium Glow effect behind image - Strip mix-blend-screen for mobile GPU performance */}
+                            <div className="absolute -inset-4 bg-gradient-to-tr from-luxury-blue to-luxury-violet opacity-30 group-hover:opacity-60 blur-2xl transition-opacity duration-1000 rounded-[3rem] pointer-events-none"></div>
 
                             {/* Main Image Mask */}
                             <div className="absolute inset-0 rounded-[2rem] overflow-hidden border border-white/10 shadow-[0_0_80px_rgba(0,0,0,0.8)] bg-black/50 z-10 transition-transform duration-700 group-hover:scale-[1.02]">
@@ -135,7 +140,8 @@ export default function Hero() {
                                     alt="Hardik Sharma"
                                     fill
                                     priority
-                                    className="w-full h-full object-cover grayscale mix-blend-luminosity opacity-80 group-hover:grayscale-0 group-hover:mix-blend-normal group-hover:opacity-100 scale-105 group-hover:scale-110 transition-all duration-1000"
+                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                    className="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 scale-105 group-hover:scale-110 transition-all duration-1000"
                                 />
 
                                 {/* Inner Glass Flare */}
